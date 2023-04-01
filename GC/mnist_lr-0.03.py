@@ -105,7 +105,7 @@ def attack(epoch,lr):
         grad_sum = g1+g2
 
         
-        loss = torch.norm(grad_sum,2)
+        loss = torch.norm(grad_sum,2).square()
         loss_all.append(loss.detach().cpu().numpy())
         if loss < 1:
             break
